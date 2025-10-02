@@ -1,0 +1,1 @@
+# Begineer Python Mini Projects Hacktoberfest 2025
