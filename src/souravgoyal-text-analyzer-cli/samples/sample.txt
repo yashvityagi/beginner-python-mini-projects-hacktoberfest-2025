@@ -1,0 +1,3 @@
+The quick brown fox jumps over the lazy dog.
+This sample is small and simple, and it helps demonstrate word counts.
+To test stdin, you can also pipe text directly into the program.
