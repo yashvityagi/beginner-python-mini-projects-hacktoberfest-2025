@@ -1,0 +1,21 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "amount": 50.75,
+      "description": "Grocery shopping",
+      "category": "Food",
+      "date": "2025-10-03",
+      "created_at": "2025-10-03T17:23:52.908381"
+    },
+    {
+      "id": 2,
+      "amount": 25.0,
+      "description": "Gas for car",
+      "category": "Transportation",
+      "date": "2025-10-03",
+      "created_at": "2025-10-03T17:24:07.141300"
+    }
+  ],
+  "last_updated": "2025-10-03T17:24:07.141306"
+}
