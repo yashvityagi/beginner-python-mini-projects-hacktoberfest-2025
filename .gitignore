@@ -214,3 +214,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Flashcards data
+src/Meghana-2124-develop-a-flashcard-app-to-learn-vocabulary/*.json
