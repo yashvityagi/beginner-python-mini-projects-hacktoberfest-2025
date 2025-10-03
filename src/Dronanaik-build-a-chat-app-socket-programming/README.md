@@ -217,11 +217,12 @@ print(f"Debug: {message_data}")  # Add this line in message handling functions
 
 ---
 ## Demo Screenshot
-![Socket Programming Chat App Interface - Server](beginner-python-mini-projects-hacktoberfest-2025/assets/Chat-app-server-interface.png)
+- **Socket Programming Chat App Interface - Server**
+![Socket Programming Chat App Interface - Server](image.png)
 
 ---
-![Socket Programming Chat App Interface - Client](beginner-python-mini-projects-hacktoberfest-2025/assets/Chat-app-server-interface.png)
-
+- **Socket Programming Chat App Interface - Client**
+![Socket Programming Chat App Interface - Client](image-1.png)
 ---
 
 **Happy Chatting! 💬✨**
