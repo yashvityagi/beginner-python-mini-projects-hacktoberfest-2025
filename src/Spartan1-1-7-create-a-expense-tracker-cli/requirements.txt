@@ -1,0 +1,9 @@
+# No external dependencies required
+# This project uses only Python standard library modules:
+# - json (for data persistence)
+# - os (for file operations)
+# - sys (for system operations)
+# - argparse (for command-line interface)
+# - datetime (for date/time handling)
+# - typing (for type hints)
+# - calendar (for date utilities)
