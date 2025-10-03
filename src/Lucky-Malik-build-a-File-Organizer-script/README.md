@@ -17,15 +17,15 @@ To run this script, you need Python 3.x installed on your system. No external li
     If you are cloning from a Git repository, use:
     ```bash
     git clone <repository_url>
-    cd manus-build-a-file-organizer-script
+    cd src/Lucky-Malik-build-a-file-organizer-script
     ```
 
-    If you downloaded the files, navigate to the `src/manus-build-a-file-organizer-script/` directory.
+    If you downloaded the files, navigate to the `src/Lucky-Malik-build-a-file-organizer-script/` directory.
 
 2.  **Navigate to the project directory:**
 
     ```bash
-    cd src/manus-build-a-file-organizer-script/
+    cd src/Lucky-Malik-build-a-file-organizer-script/
     ```
 
 ### Usage
