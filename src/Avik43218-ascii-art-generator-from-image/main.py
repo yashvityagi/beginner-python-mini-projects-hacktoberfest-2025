@@ -34,6 +34,23 @@ class ascii_art_generator:
 
         return ascii_image
     
+    def save_image(self, path: str):
+
+        ascii_image = self.display_ascii_image(path=path)
+
+        with open("ascii_image.txt", 'w') as file:
+            file.write(ascii_image)
+
+        return None
+    
 if __name__ == "__main__":
 
+    path = input("Enter image path: ")
+    default_path = "image.jpg"
+
     generator = ascii_art_generator()
+
+    ascii_image = generator.display_ascii_image(path=default_path)
+    generator.save_image(path=default_path)
+
+    print(ascii_image)
