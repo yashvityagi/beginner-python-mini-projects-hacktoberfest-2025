@@ -22,27 +22,35 @@ This converter supports the following Markdown syntax:
 
 This project requires only Python 3. No external libraries need to be installed.
 
-1.  **Clone the Repository**
-    Clone or download the repository containing this project to your local machine.
-
-2.  **Create an Input File**
-    Create a new file with a `.md` extension (e.g., `sample.md`) and write your content using the supported Markdown syntax.
-
-3.  **Run the Converter Script**
-    Open your terminal or command prompt, navigate to the project directory, and execute the following command:
-
+1.  **Single File Conversion**
     ```powershell
-    python md_converter.py <input_file.md> <output_file.html>
+    python md_converter.py .\sample.md -o .\output.html
     ```
 
-    For example:
+    - If `-o` is omitted, the output will be written next to the input as `.html`.
+    - You can set a custom HTML title:
+      ```powershell
+      python md_converter.py .\sample.md -o .\output.html -t "My Doc"
+      ```
 
+2.  **Directory Conversion**
+    Convert all `.md` files in a directory to `.html` files:
     ```powershell
-    python md_converter.py sample.md output.html
+    python md_converter.py .\docs -o .\public\docs
+    ```
+
+    Recurse into subdirectories:
+    ```powershell
+    python md_converter.py .\docs -o .\public\docs -r
+    ```
+
+3.  **Help**
+    ```powershell
+    python md_converter.py -h
     ```
 
 4.  **View the Output**
-    The script will generate a new `output.html` file in the same directory. You can open this file in any web browser to see the final result.
+    Open the generated `.html` files in any web browser.
 
 ## 📝 Example Usage
 
