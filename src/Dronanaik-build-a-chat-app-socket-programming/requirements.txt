@@ -1,0 +1,26 @@
+# Socket Programming Chat App - Required Packages
+# Install with: pip install -r requirements.txt
+
+# Core Framework
+streamlit>=1.28.0
+
+# Socket Programming (Built-in Python modules - no additional packages needed)
+# socket - Built-in Python module for network programming
+# threading - Built-in Python module for multi-threading
+# json - Built-in Python module for data serialization
+# time - Built-in Python module for time operations
+# datetime - Built-in Python module for date/time handling
+# uuid - Built-in Python module for unique identifiers
+
+# Optional: Development and Testing (uncomment if needed)
+# pytest>=7.0.0
+# black>=22.0.0
+# flake8>=5.0.0
+
+# Optional: Enhanced Features (uncomment if needed)
+# cryptography>=3.4.8  # For message encryption
+# sqlite3  # Built-in Python module for database storage
+# asyncio  # Built-in Python module for async operations
+
+# Note: This application primarily uses Python's built-in modules
+# The only external dependency is Streamlit for the web interface
