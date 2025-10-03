@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tip Calculator - D3PA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1><i class="fas fa-calculator"></i> Tip Calculator</h1>
+            <p class="subtitle">
+                By <a href="https://github.com/D3PA" target="_blank">
+                    <i class="fab fa-github"></i>D3PA
+                </a>
+            </p>
+            
+            <form id="tipForm">
+                <div class="input-group">
+                    <label><i class="fas fa-receipt"></i> Bill Amount</label>
+                    <input type="number" name="bill_amount" step="0.01" placeholder="0.00" required>
+                </div>
+                
+                <div class="input-group">
+                    <label><i class="fas fa-percentage"></i> Tip Percentage</label>
+                    <input type="number" name="tip_percentage" placeholder="15" required>
+                </div>
+                
+                <div class="input-group">
+                    <label><i class="fas fa-users"></i> Split Between</label>
+                    <input type="number" name="people_count" value="1" min="1">
+                </div>
+
+                <button type="submit">
+                    <i class="fas fa-calculator"></i> Calculate
+                </button>
+            </form>
+
+            <div id="results" class="results hidden">
+                <h3><i class="fas fa-chart-bar"></i> Results</h3>
+                <div class="result-item">
+                    <span>Tip Amount:</span>
+                    <span id="tipAmount">$0.00</span>
+                </div>
+                <div class="result-item">
+                    <span>Total Amount:</span>
+                    <span id="totalAmount">$0.00</span>
+                </div>
+                <div class="result-item">
+                    <span>Per Person:</span>
+                    <span id="perPerson">$0.00</span>
+                </div>
+            </div>
+
+            <div id="error" class="error hidden">
+                <p><i class="fas fa-exclamation-triangle"></i> Please check your inputs</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
