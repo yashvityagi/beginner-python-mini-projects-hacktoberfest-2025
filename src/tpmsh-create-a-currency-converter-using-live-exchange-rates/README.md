@@ -10,4 +10,6 @@ This is a simple Python 3 command-line tool that converts currencies using live 
 ## How to Run
 
 1. Clone or download this folder.
-2. Install dependencies:
+2. Install dependencies
+3. Run using converter.py
+    > python converter.py
