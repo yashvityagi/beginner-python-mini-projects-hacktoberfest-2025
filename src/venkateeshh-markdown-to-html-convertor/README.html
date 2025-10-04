@@ -1,0 +1,134 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>README</title>
+<style>
+
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; max-width: 760px; margin: 3rem auto; line-height: 1.6; padding: 0 1rem; }
+pre { background:#f6f8fa; padding:1rem; overflow:auto; }
+code { background:#f6f8fa; padding:0.15rem 0.3rem; border-radius:4px; }
+h1,h2,h3,h4 { margin-top:1.4rem; }
+blockquote { color:#555; border-left:4px solid #ddd; padding-left:1rem; margin:1rem 0; }
+ul,ol { margin:0.5rem 0 1rem 1.25rem; }
+
+</style>
+</head>
+<body>
+<main>
+<h1>Markdown to HTML Converter</h1>
+<p>
+A simple Python-based tool to convert Markdown (<code>.md</code>) files into standalone HTML files.
+</p>
+<p>
+This project includes:
+<ul>
+<li>A <strong>built-in lightweight Markdown parser</strong> (supports headings, lists, code blocks, links, bold/italic, blockquotes, etc.).</li>
+<li>An option to use the <strong><code>markdown</code> PyPI package</strong> for full CommonMark + extensions.</li>
+<li>Support for converting <strong>a single file</strong> or <strong>all <code>.md</code> files in a directory</strong>.</li>
+<li>Optional <strong>custom CSS</strong> or a built-in default style.</li>
+</p>
+</ul>
+<hr/>
+<h2>Features</h2>
+<ul>
+<li>Convert <code>.md</code> files to <code>.html</code> with ease.</li>
+<li>Lightweight built-in parser.</li>
+<li>Support for fenced code blocks (```), headings, lists, blockquotes.</li>
+<li>Inline formatting: <strong>bold</strong>, <em>italic</em>, <code>inline code</code>, <a href="#">links</a>.</li>
+<li>Full CommonMark + tables & extensions with <code>--use-lib</code> (requires <code>pip install markdown</code>).</li>
+<li>Automatically generates a standalone HTML page with styles.</li>
+</ul>
+<hr/>
+<h2>Installation</h2>
+<p>
+Clone this repo and navigate into it:
+</p>
+<pre><code>
+git clone https://github.com/yourusername/md2html.git
+cd md2html
+</code></pre>
+<p>
+(Optional) install the <code>markdown</code> package for extended features:
+</p>
+<pre><code>
+pip install markdown
+</code></pre>
+<hr/>
+<h2>Usage</h2>
+<h3>Convert a single file:</h3>
+<pre><code>
+python md2html.py README.md
+</code></pre>
+<h3>Convert with full Markdown library support:</h3>
+<pre><code>
+python md2html.py README.md --use-lib
+</code></pre>
+<h3>Convert all <code>.md</code> files in a directory:</h3>
+<pre><code>
+python md2html.py docs/ --out-dir site/
+</code></pre>
+<h3>Use custom CSS:</h3>
+<pre><code>
+python md2html.py README.md --css styles.css
+</code></pre>
+<hr/>
+<h2>Example</h2>
+<p>
+Given an input file <code>example.md</code>:
+</p>
+<pre><code>
+# Hello World
+
+This is **Markdown** converted to HTML.
+
+- Item 1
+- Item 2
+
+</code></pre>
+<p>
+Run:
+</p>
+<pre><code>
+python md2html.py example.md
+</code></pre>
+<p>
+Output file <code>example.html</code>:
+</p>
+<pre><code>
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;example&lt;/title&gt;
+  &lt;style&gt; ... default CSS ... &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;p&gt;This is &lt;strong&gt;Markdown&lt;/strong&gt; converted to HTML.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Item 1&lt;/li&gt;
+      &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr/>
+<h2>Options</h2>
+<ul>
+<li><code>--out-dir &lt;dir&gt;</code> → specify an output directory.</li>
+<li><code>--use-lib</code> → use the <code>markdown</code> package instead of the built-in parser.</li>
+<li><code>--css &lt;file&gt;</code> → add a custom CSS file.</li>
+</ul>
+<hr/>
+<h2>License</h2>
+<p>
+MIT License © 2025
+</p>
+</main>
+</body>
+</html>

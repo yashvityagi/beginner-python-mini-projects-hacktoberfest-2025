@@ -1,0 +1,20 @@
+# reaquirmenetx.txt
+
+This project (organizer.py) uses only Python standard library modules and therefore has no runtime external dependencies.
+
+Detected standard library imports:
+- os
+- shutil
+- logging
+
+No third-party packages are required to run the script on a system with Python 3.6+.
+
+Optional development / testing packages you may want to install:
+- pytest    # for running tests
+- black     # for code formatting
+- mypy      # for optional static type checking
+
+To install optional dev packages (example):
+    pip install pytest black mypy
+
+If you expect to add functionality that uses external libraries, update this file (or the real `requirements.txt`) with the package names and versions.
