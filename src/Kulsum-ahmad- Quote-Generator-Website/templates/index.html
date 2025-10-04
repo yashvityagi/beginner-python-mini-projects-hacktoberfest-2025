@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Motivational Quote 🌟</h1>
+        <p class="quote">“{{ quote.text }}”</p>
+        <p class="author">— {{ quote.author }}</p>
+        <button onclick="window.location.reload()">New Quote</button>
+    </div>
+</body>
+</html>
