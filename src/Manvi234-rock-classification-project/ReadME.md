@@ -1,63 +1,77 @@
-# Rock Classification Project
 
-## Description
-
-This project focuses on the classification of rocks into three distinct categories. It utilizes a machine learning approach to classify rock samples based on a set of 11 features. The goal is to build and evaluate different classification models to find the one that performs best on the given dataset. 🪨
 
 -----
 
-## How to Run
+# Interactive Rock Classification Analysis 🗿
 
-1.  **Install Dependencies:** Make sure you have Python installed, and then install the necessary libraries using pip:
+## Project Overview
+
+This project provides an interactive command-line script for training and evaluating machine learning models to classify rock types based on feature data. The script guides the user through the process of loading data, selecting a model, and running the analysis. Finally, it generates a plot comparing the performance of the best model against human classification accuracy.
+
+This tool is designed for easy experimentation, allowing users to quickly test different models without modifying the source code.
+
+-----
+
+##  Author
+
+  * **Manvi Gawande**
+  * **Contact:https://github.com/Manvi234/** 
+
+-----
+
+
+##  Requirements
+
+To run this script, you will need:
+
+  * **Python 3.6** or newer
+  * The following Python libraries:
+      * `pandas`
+      * `scikit-learn`
+      * `matplotlib`
+      * `openpyxl` (for reading Excel files)
+
+-----
+
+##  Installation
+
+1.  **Clone or download the repository** containing the script and data files.
+2.  **Install the required libraries** using pip. Open your terminal and run the following command:
     ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn
+    pip install pandas scikit-learn matplotlib openpyxl
     ```
-2.  **Data:** Place the `aggregateRockData.xlsx` and `feature_presence540.txt` files in the same directory as the Jupyter Notebook.
-3.  **Run the Notebook:** Open and run the `Rock_Classification.ipynb` notebook in a Jupyter environment. Execute the cells in order to see the data loading, preprocessing, model training, and evaluation steps.
 
 -----
 
-## Dependencies
+##  File Structure
 
-  * **pandas**
-  * **numpy**
-  * **matplotlib**
-  * **seaborn**
-  * **scikit-learn**
+Make sure the following files are all located in the **same directory** before running the script:
 
------
-
-## Dataset
-
-The project uses two data files:
-
-  * `aggregateRockData.xlsx`: This file contains the labels for the rock samples.
-  * `feature_presence540.txt`: This file contains 11 features for each rock sample.
-
-These two files are merged to create a single dataset of 480 samples with 11 features and one target label.
+  * `run_analysis.py`: The main interactive Python script.
+  * `aggregateRockData.xlsx`: The Excel file containing the rock type labels.
+  * `feature_presence540.txt`: The text file containing the feature data for each rock sample.
+  * `trialData.csv`: The CSV file containing the human performance data for comparison.
 
 -----
 
-## Models Implemented
+##  How to Use
 
-The following machine learning models are used for the classification task:
-
-  * **Random Forest Classifier**
-  * **AdaBoost Classifier**
-  * **Gradient Boosting Classifier**
-  * **Stacking Classifier**
-  * **Support Vector Machine (SVM)**
-  * **Logistic Regression**
+1.  **Open your terminal** (Command Prompt on Windows, Terminal on macOS/Linux).
+2.  **Navigate to the project directory** using the `cd` command.
+    ```bash
+    cd path/to/your/project_folder
+    ```
+3.  **Run the script** with the following command:
+    ```bash
+    python run_analysis.py
+    ```
+4.  **Follow the on-screen prompts.** The script will guide you through the analysis step-by-step.
 
 -----
 
-## Evaluation
+##  Output
 
-The performance of the models is evaluated using the following metrics:
+The script produces two types of output:
 
-  * **Classification Report**
-  * **Confusion Matrix**
-  * **Accuracy Score**
-  * **Precision Score**
-  * **Recall Score**
-  * **F1 Score**
+1.  **Terminal Output:** Performance metrics (Accuracy and F1 Score) for the trained models on the training, validation, and test sets will be printed directly to your console.
+2.  **Plot Image:** If you choose to save the plot, an image file named `human_vs_model_accuracy.png` will be created in your project directory. This plot visually compares the model's accuracy against human accuracy for each rock type.
