@@ -1,55 +1,102 @@
+<<<<<<< HEAD
+## Interactive Happiness Data Analysis Script
+This repository contains an interactive Python script that performs a complete machine learning analysis on the World Happiness Report data. The script is a refactored version of an extensive Jupyter Notebook, preserving all original data summaries, visualizations, model evaluations, and final conclusions.
+=======
 ##Happiness Data Analysis
+>>>>>>> origin/main
 
+Users can run the script and navigate an interactive command-line menu to explore different stages of the analysis, from initial data exploration to the final Ridge Regression model with polynomial features.
 
-This project analyzes global happiness data to understand which socio-economic and health-related factors most strongly influence a country's life satisfaction (Life Ladder).
-It involves data cleaning, exploratory data analysis (EDA), outlier handling, feature transformation, and regression modeling (Linear, Polynomial, Ridge, Lasso, Elastic Net, and SGD).
+## Features
+Interactive Menu: Navigate through the entire data analysis pipeline using simple terminal inputs.
 
-The notebook walks through each step — from importing data to model evaluation — and provides insights into the key drivers of happiness across countries and years.
+Data Preparation: Includes automatic loading, missing value imputation, and feature engineering (log transformations and polynomial features).
 
+<<<<<<< HEAD
+Comprehensive Evaluation: Runs and reports metrics (MSE, RMSE, R²) for four different models: Linear Regression, Lasso, Ridge, and ElasticNet.
+=======
 ##Requirements & Dependencies
+>>>>>>> origin/main
 
-Make sure the following packages are installed in your Python environment:
-pip install numpy pandas matplotlib seaborn scikit-learn scipy
+Visualization: Generates the original Boxplots, Histograms, Correlation Heatmaps, and the final Residual Plots on demand.
 
-If you plan to run it inside Jupyter Notebook or VS Code, also install:
-pip install jupyterlab
+Preserved Analysis: All text-based inferences and statistical conclusions from the original notebook are included and displayed upon selection.
+## Setup and Installation
+1. Prerequisites
+You need a working installation of Python 3.x.
 
-Python Version
+2. Required Libraries
+The analysis relies on standard scientific Python libraries. You can install all necessary packages using pip:
 
-Python 3.8 or higher is recommended.
+Bash
 
+<<<<<<< HEAD
+pip install pandas numpy matplotlib seaborn scikit-learn
+3. Files Required
+Ensure the following two files are in the same directory on your local machine:
+=======
 ##Key Features
+>>>>>>> origin/main
 
-Data exploration and visualization
+happiness_analysis_interactive.py (The main script provided)
 
-Handling missing values and outliers (via Winsorization)
+happiness_data.csv (The dataset used in the analysis)
+## How to Run the Script
+Open your terminal or command prompt.
 
-Log transformation for skewed variables
+Navigate to the directory where you saved your files:
 
-Correlation and feature analysis
+Bash
 
-Polynomial feature expansion
+cd /path/to/your/project/folder
+Execute the script using the Python interpreter:
 
-Regression modeling (Linear, Ridge, Lasso, Elastic Net, SGD)
+Bash
 
-Cross-validation and model comparison
+python happiness_analysis_interactive.py
+Interactive Usage
+Once the script starts, it will first confirm that the data is loaded and then display the main menu:
 
-Insights into the most influential happiness indicators
+================================================================================
+    SELECT ANALYSIS SECTION FROM ORIGINAL NOTEBOOK
+================================================================================
+1. Data Summary & Basic Statistics
+2. Visualization (Boxplots, Histograms, Skewness)
+3. Relationships (Correlation Matrix & Scatter Plots)
+4. Modelling: Linear & Regularized Regression (Base Features)
+5. Modelling: Polynomial Features (Degree 2) Evaluation
+6. FINAL MODEL: Best Ridge Regression (Poly Features + Plots)
+0. Exit
+================================================================================
+Enter your choice (0-6):
+Note on Plots: When you select options 2, 3, or 6, the script will open visual plots (e.g., boxplots or scatter plots). You must close the plot windows to return to the main menu and continue the analysis.
 
+<<<<<<< HEAD
+## Analysis Summary
+The final and best-performing model identified by the analysis is Ridge Regression applied to Degree 2 Polynomial Features.
+=======
 ##Steps to Run Locally
+>>>>>>> origin/main
 
-Clone or download the repository
+Metric	Value (Approx.)
+Test Set MSE	0.253
+Test Set R² Score	0.795
 
+Export to Sheets
+This strong R² indicates that the model explains approximately 79.5% of the variance in the 'Life Ladder' (Happiness Score) using the engineered features.
 
-Install dependencies
+🛠️ Script Structure (For Developers)
+The code is organized into modular functions:
 
-pip install numpy pandas matplotlib seaborn scikit-learn scipy
+setup_data(): Runs once at startup to load, impute, split, and prepare both the base and polynomial datasets.
 
-Launch Jupyter Notebook
-Open the notebook
+evaluate_model(...): A helper function that performs 3-fold cross-validation and calculates final test metrics.
 
-From the browser tab that opens, select:
+run_data_summary(), run_visualization(), etc.: These functions correspond to the menu options and contain the logic, original analysis text, and plotting commands for each section.
 
+<<<<<<< HEAD
+main_menu(): The control loop that handles user input and calls the appropriate analysis function.
+=======
 Happiness_data_analysis.ipynb
 
 
@@ -95,3 +142,4 @@ Interpretation of top factors influencing life satisfaction
 🧑‍💻 Author
 
 Sanskar Srivastava
+>>>>>>> origin/main
