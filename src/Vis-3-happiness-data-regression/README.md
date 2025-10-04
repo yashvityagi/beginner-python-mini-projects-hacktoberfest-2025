@@ -41,17 +41,18 @@ Interactive Usage
 Once the script starts, it will display the main menu. To select an analysis section, type the corresponding number (0-6) and press Enter.
 
 Menu Option	Command	Description
-Data Summary	1	Shows data structure, statistical summaries, and text-based inferences.
 
-Visualization	2	Generates and displays Boxplots and Histograms. (Requires closing plot windows to continue).
+1 :	Shows data structure, statistical summaries, and text-based inferences.
 
-Relationships	3	Displays the Correlation Matrix and Scatter Plots. (Requires closing plot windows to continue).
+2 :	Generates and displays Boxplots and Histograms. (Requires closing plot windows to continue).
 
-Modelling (Base Features)	4	Runs and prints evaluation metrics for Linear, Lasso, Ridge, and ElasticNet on the un-engineered features.
+3 : 	Displays the Correlation Matrix and Scatter Plots. (Requires closing plot windows to continue).
 
-Modelling (Polynomial Features)	5	Runs and prints evaluation metrics for the four models on the Degree 2 Polynomial Features.
+4 :	Runs and prints evaluation metrics for Linear, Lasso, Ridge, and ElasticNet on the un-engineered features.
 
-FINAL MODEL	6	Runs the final best model (Ridge α=0.01) and displays the key test metrics and residual plots.
+5 :	Runs and prints evaluation metrics for the four models on the Degree 2 Polynomial Features.
+
+6 :	Runs the final best model (Ridge α=0.01) and displays the key test metrics and residual plots.
 
 Exit	0	Stops the script.
 
