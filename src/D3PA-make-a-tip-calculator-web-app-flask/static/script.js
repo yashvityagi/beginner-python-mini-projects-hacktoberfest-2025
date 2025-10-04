@@ -28,7 +28,7 @@ function showResults(data) {
     document.getElementById('tipAmount').textContent = '$' + data.tip_amount;
     document.getElementById('tipPerPerson').textContent = '$' + data.tip_per_person;
     document.getElementById('totalAmount').textContent = '$' + data.total;
-    document.getElementById('totalperPerson').textContent = '$' + data.total_per_person;
+    document.getElementById('totalPerPerson').textContent = '$' + data.total_per_person;
     
     document.getElementById('results').classList.remove('hidden');
     document.getElementById('error').classList.add('hidden');

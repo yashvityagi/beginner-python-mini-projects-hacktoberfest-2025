@@ -23,8 +23,8 @@ def calculate():
         
         return jsonify({
             'tip_amount': round(tip_amount, 2),
-            'total': round(total, 2),
             'tip_per_person': round(tip_amount / people, 2),
+            'total': round(total, 2),
             'total_per_person': round(total / people, 2)
         })
     except:
