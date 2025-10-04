@@ -142,3 +142,7 @@ button:hover {
 .hidden {
     display: none;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
