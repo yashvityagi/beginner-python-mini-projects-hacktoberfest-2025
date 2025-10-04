@@ -1,4 +1,4 @@
-#Happiness Data Analysis
+##Happiness Data Analysis
 
 
 This project analyzes global happiness data to understand which socio-economic and health-related factors most strongly influence a country's life satisfaction (Life Ladder).
@@ -6,7 +6,7 @@ It involves data cleaning, exploratory data analysis (EDA), outlier handling, fe
 
 The notebook walks through each step — from importing data to model evaluation — and provides insights into the key drivers of happiness across countries and years.
 
-#Requirements & Dependencies
+##Requirements & Dependencies
 
 Make sure the following packages are installed in your Python environment:
 pip install numpy pandas matplotlib seaborn scikit-learn scipy
@@ -18,7 +18,7 @@ Python Version
 
 Python 3.8 or higher is recommended.
 
-#Key Features
+##Key Features
 
 Data exploration and visualization
 
@@ -36,7 +36,7 @@ Cross-validation and model comparison
 
 Insights into the most influential happiness indicators
 
-#Steps to Run Locally
+##Steps to Run Locally
 
 Clone or download the repository
 
@@ -58,7 +58,7 @@ Run all cells
 Run each cell sequentially (Shift + Enter),
 or use Kernel → Restart & Run All to execute the entire notebook.
 
-#Dataset Information
+##Dataset Information
 
 The dataset includes the following columns:
 
@@ -82,7 +82,7 @@ and several other socio-economic indicators.
 
 Outliers and missing values are handled thoughtfully to maintain data integrity.
 
-#Output & Results
+##Output & Results
 
 Correlation matrix and feature importance visualizations
 
