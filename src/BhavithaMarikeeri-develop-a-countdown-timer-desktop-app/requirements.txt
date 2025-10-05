@@ -1,0 +1,8 @@
+# This project uses only Python standard library (Tkinter)
+# No external dependencies required
+
+# Note: Tkinter comes pre-installed with Python
+# If Tkinter is not installed, use:
+# - Ubuntu/Debian: sudo apt-get install python3-tk
+# - macOS: Tkinter is included with Python
+# - Windows: Tkinter is included with Python
