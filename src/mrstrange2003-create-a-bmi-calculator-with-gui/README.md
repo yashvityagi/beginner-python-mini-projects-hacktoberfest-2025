@@ -17,3 +17,4 @@ This project implements a **BMI Calculator** in Python using **Tkinter**.
 ```bash
 python bmi_calculator.py
 
+
