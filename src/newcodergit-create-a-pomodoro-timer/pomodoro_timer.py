@@ -19,7 +19,6 @@ This file uses only Python standard library for maximum compatibility.
 import tkinter as tk
 from tkinter import messagebox
 import tkinter.font as tkfont
-import datetime
 import threading
 import sys
 
@@ -228,24 +227,21 @@ class PomodoroTimer:
     
     def update_display(self):
         """Update the timer display and session info"""
-        # Update time display
         self.time_label.config(text=self.format_time(self.time_remaining))
         
-        # Update session info
         if self.is_work_session:
             session_text = f"Work Session {self.current_session}"
-            self.time_label.config(fg="#E74C3C")  # Red for work
+            self.time_label.config(fg="#E74C3C")
             self.session_label.config(text=session_text)
         else:
             if self.current_session % self.sessions_until_long_break == 0:
                 session_text = "Long Break"
-                self.time_label.config(fg="#3498DB")  # Blue for long break
+                self.time_label.config(fg="#3498DB")
             else:
                 session_text = "Short Break"
-                self.time_label.config(fg="#2ECC71")  # Green for short break
+                self.time_label.config(fg="#2ECC71")
             self.session_label.config(text=session_text)
         
-        # Update progress info
         progress_text = f"Sessions completed: {max(0, self.current_session - 1)}"
         self.progress_label.config(text=progress_text)
     
@@ -256,13 +252,12 @@ class PomodoroTimer:
             self.start_button.config(state=tk.DISABLED)
             self.pause_button.config(state=tk.NORMAL)
             
-            # Start timer thread
             self.stop_timer_event.clear()
             self.timer_thread = threading.Thread(target=self._timer_loop, daemon=True)
             self.timer_thread.start()
     
     def pause_timer(self):
-        """Pause/resume the timer"""
+        """Pause the timer"""
         if self.is_running:
             self.is_running = False
             self.stop_timer_event.set()
@@ -276,7 +271,6 @@ class PomodoroTimer:
         if self.is_work_session:
             self.time_remaining = self.work_duration
         else:
-            # Determine if it should be a long break
             if self.current_session % self.sessions_until_long_break == 0:
                 self.time_remaining = self.long_break_duration
             else:
@@ -287,14 +281,12 @@ class PomodoroTimer:
     def _timer_loop(self):
         """Main timer loop running in separate thread"""
         while self.time_remaining > 0 and not self.stop_timer_event.is_set():
-            threading.Event().wait(1)  # Wait 1 second
+            threading.Event().wait(1)
             if not self.stop_timer_event.is_set():
                 self.time_remaining -= 1
-                # Update display in main thread
                 self.root.after(0, self.update_display)
         
         if self.time_remaining <= 0 and not self.stop_timer_event.is_set():
-            # Timer finished
             self.root.after(0, self._timer_finished)
     
     def _timer_finished(self):
@@ -303,10 +295,8 @@ class PomodoroTimer:
         self.start_button.config(state=tk.NORMAL)
         self.pause_button.config(state=tk.DISABLED)
         
-        # Play sound notification
         self._play_notification_sound()
         
-        # Show completion message
         if self.is_work_session:
             message = f"Work session {self.current_session} completed!\nTime for a break."
             title = "Work Session Complete"
@@ -316,16 +306,13 @@ class PomodoroTimer:
         
         messagebox.showinfo(title, message)
         
-        # Switch to next session
         if self.is_work_session:
-            # Work session finished, start break
             self.is_work_session = False
             if self.current_session % self.sessions_until_long_break == 0:
                 self.time_remaining = self.long_break_duration
             else:
                 self.time_remaining = self.short_break_duration
         else:
-            # Break finished, start next work session
             self.is_work_session = True
             self.current_session += 1
             self.time_remaining = self.work_duration
@@ -336,11 +323,9 @@ class PomodoroTimer:
         """Play a notification sound when timer finishes"""
         try:
             if winsound and sys.platform.startswith('win'):
-                # Play system sound on Windows
                 winsound.MessageBeep(winsound.MB_ICONASTERISK)
             else:
-                # Fallback: print to console
-                print("\a")  # ASCII bell character
+                print("\a")
                 print("🍅 Timer finished!")
         except Exception:
             print("🍅 Timer finished!")
@@ -355,9 +340,8 @@ class PomodoroTimer:
 
 def main():
     root = tk.Tk()
-    app = PomodoroTimer(root)
+    PomodoroTimer(root)
     
-    # Center the window
     root.update_idletasks()
     width = root.winfo_width()
     height = root.winfo_height()

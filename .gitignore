@@ -217,3 +217,7 @@ __marimo__/
 
 # Flashcards data
 src/Meghana-2124-develop-a-flashcard-app-to-learn-vocabulary/*.json
+
+# Python
+__pycache__/
+*.pyc
