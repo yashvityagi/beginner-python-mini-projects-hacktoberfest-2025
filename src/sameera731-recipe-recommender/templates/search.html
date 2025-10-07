@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Recipes - Recipe Rover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-color: #e67e22; --secondary-color: #3498db; --background-color: #f4f1ea; --text-color: #4a4a4a; --card-bg-color: #ffffff; --border-color: #e0e0e0; --shadow-color: rgba(0, 0, 0, 0.08); }
+        body { font-family: 'Lato', sans-serif; line-height: 1.6; background-color: var(--background-color); color: var(--text-color); margin: 0; padding: 2rem; }
+        .container { max-width: 800px; margin: auto; background: var(--card-bg-color); padding: 2rem 3rem; border-radius: 12px; box-shadow: 0 5px 20px var(--shadow-color); }
+        h1 { font-family: 'Pacifico', cursive; font-size: 3.5rem; color: var(--primary-color); text-align: center; }
+        h2 { text-align: center; color: var(--primary-color); }
+        nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
+        nav a { text-decoration: none; color: var(--secondary-color); font-weight: bold; font-size: 1.1em; transition: color 0.2s; position: relative; padding-bottom: 5px; }
+        nav a:hover { color: #2980b9; }
+        nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #2980b9; transition: width 0.3s; }
+        nav a:hover::after { width: 100%; }
+        form { margin-top: 2rem; }
+        textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1em; min-height: 120px; box-sizing: border-box; resize: vertical; background-color: #fcfcfc; transition: border-color 0.2s, box-shadow 0.2s; }
+        textarea:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2); outline: none; }
+        button { background-image: linear-gradient(to right, #e67e22 0%, #d35400 100%); color: white; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1em; font-weight: bold; display: block; width: 100%; margin-top: 1rem; transition: transform 0.2s, box-shadow 0.2s; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .results { margin-top: 3rem; }
+        .match { background-color: #fff; border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; border-left: 5px solid var(--secondary-color); }
+        .match a { text-decoration: none; color: var(--primary-color); font-size: 1.3em; font-weight: bold;}
+        .missing { color: #c0392b; font-size: 0.9em; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Recipes</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/search">Search</a>
+            <a href="/add">Add Recipe</a>
+        </nav>
+        
+        <form action="/search" method="post">
+            <label for="ingredients"><strong>Enter ingredients you have (one per line):</strong></label><br>
+            <textarea name="ingredients" id="ingredients" rows="6" placeholder="e.g.,&#10;chicken&#10;onion&#10;canned tomatoes"></textarea>
+            <button type="submit">Find Recipes</button>
+        </form>
+
+        {% if matches is defined %}
+        <div class="results">
+            <h2>Recommendations</h2>
+            {% if matches %}
+                {% for match in matches %}
+                <div class="match">
+                    <h3><a href="/recipe/{{ match.id }}">{{ match.name }}</a> ({{ "%.0f"|format(match.match_percentage) }}% Match)</h3>
+                    {% if match.missing_count == 0 %}
+                        <p style="color: #27ae60; font-weight: bold;">You have all the ingredients!</p>
+                    {% else %}
+                        <p class="missing">You are missing {{ match.missing_count }} ingredient(s): {{ match.missing_ingredients|join(', ') }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No recipes found matching your ingredients.</p>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
