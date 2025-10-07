@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Recipe - Recipe Rover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-color: #e67e22; --secondary-color: #3498db; --background-color: #f4f1ea; --text-color: #4a4a4a; --card-bg-color: #ffffff; --border-color: #e0e0e0; --shadow-color: rgba(0, 0, 0, 0.08); }
+        body { font-family: 'Lato', sans-serif; line-height: 1.6; background-color: var(--background-color); color: var(--text-color); margin: 0; padding: 2rem; }
+        .container { max-width: 800px; margin: auto; background: var(--card-bg-color); padding: 2rem 3rem; border-radius: 12px; box-shadow: 0 5px 20px var(--shadow-color); }
+        h1 { font-family: 'Pacifico', cursive; font-size: 3.5rem; color: var(--primary-color); text-align: center; }
+        nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
+        nav a { text-decoration: none; color: var(--secondary-color); font-weight: bold; font-size: 1.1em; transition: color 0.2s; position: relative; padding-bottom: 5px; }
+        nav a:hover { color: #2980b9; }
+        nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #2980b9; transition: width 0.3s; }
+        nav a:hover::after { width: 100%; }
+        form { display: flex; flex-direction: column; }
+        label { margin-top: 1.5rem; font-weight: bold; color: var(--primary-color); }
+        input, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1em; margin-top: 0.5rem; box-sizing: border-box; background-color: #fcfcfc; transition: border-color 0.2s, box-shadow 0.2s; }
+        input:focus, textarea:focus { border-color: var(--secondary-color); box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); outline: none; }
+        textarea { min-height: 120px; resize: vertical; }
+        button { background-image: linear-gradient(to right, #3498db 0%, #2980b9 100%); color: white; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1em; font-weight: bold; margin-top: 2rem; transition: transform 0.2s, box-shadow 0.2s; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add a New Recipe</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/search">Search</a>
+            <a href="/add">Add Recipe</a>
+        </nav>
+        
+        <form action="/add" method="post">
+            <label for="name">Recipe Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="instructions">Instructions:</label>
+            <textarea id="instructions" name="instructions" required></textarea>
+
+            <label for="ingredients">Ingredients (one per line, e.g., "1 cup flour"):</label>
+            <textarea id="ingredients" name="ingredients" required placeholder="e.g.,&#10;2 eggs&#10;1 small onion&#10;1/4 tsp turmeric powder"></textarea>
+
+            <label for="youtube_link">YouTube Link (optional):</label>
+            <input type="url" id="youtube_link" name="youtube_link" placeholder="https://www.youtube.com/watch?v=...">
+
+            <button type="submit">Save Recipe</button>
+        </form>
+    </div>
+</body>
+</html>
+
