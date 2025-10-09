@@ -107,13 +107,6 @@ This project is licensed under the **MIT License**.
 
 ---
 
-## 🙌 Contributing
-
-Pull requests are welcome!
-Make sure each project lives in its own folder under `src/` as per repository rules.
-
----
-
 **Made with 💻 and ☕ by [Rushikesh Bhabad](https://github.com/yourusername)**
 for **Hacktoberfest 2025** 🎉
 
