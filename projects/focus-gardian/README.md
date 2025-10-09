@@ -1,4 +1,4 @@
-Sure! Here’s the **ready-to-copy README.md** for your project folder
+
 (`rushikeshbhabad-focus-guardian/README.md`) 👇
 
 ---
