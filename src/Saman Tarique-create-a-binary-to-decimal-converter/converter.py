@@ -1,6 +1,6 @@
 while True:
     value=input("Enter binary value for conversion =").strip()
-    if value==""and value==" ":
+    if value=="":
         print("Error! input cannot be empty:Please try again =")
         continue
     if not all (digit in "01" for digit in value):
