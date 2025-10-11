@@ -29,7 +29,7 @@ class ascii_art_generator:
         pixel_count = len(pixels_data)
 
         # Normalize pixel color values and map ASCII characters
-        characters = "".join([self.ASCII_CHARACTERS[pixel // 30] for pixel in pixels_data])
+        characters = "".join([self.ASCII_CHARACTERS[pixel // 15] for pixel in pixels_data])
         ascii_image = "\n".join(characters[i : (i + new_width)] for i in range(0, pixel_count, new_width))
 
         return ascii_image
@@ -45,8 +45,8 @@ class ascii_art_generator:
     
 if __name__ == "__main__":
 
-    path = input("Enter image path: ")
-    default_path = "image.jpg"
+    # path = input("Enter image path: ")
+    default_path = r"D:\Programs\PythonPrograms\hacktoberfest_2025\beginner-python-mini-projects-hacktoberfest-2025\src\Avik43218-ascii-art-generator-from-image\image.jpg"
 
     generator = ascii_art_generator()
 
