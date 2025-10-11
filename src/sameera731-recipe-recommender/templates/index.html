@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Rover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e67e22; /* Warm Orange */
+            --secondary-color: #3498db; /* Friendly Blue */
+            --background-color: #f4f1ea; /* Soft Cream */
+            --text-color: #4a4a4a;
+            --card-bg-color: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+        }
+        body { font-family: 'Lato', sans-serif; line-height: 1.6; background-color: var(--background-color); color: var(--text-color); margin: 0; padding: 2rem; }
+        .container { display: flex; max-width: 1200px; margin: auto; gap: 2rem; }
+        .sidebar { flex: 1; background: var(--card-bg-color); padding: 2rem; border-radius: 12px; box-shadow: 0 5px 20px var(--shadow-color); border-top: 4px solid var(--secondary-color); }
+        .main-content { flex: 3; }
+        h1, h2, h3 { color: var(--primary-color); }
+        h1 { font-family: 'Pacifico', cursive; font-size: 3.5rem; text-align: center; margin-bottom: 0; }
+        .app-description { text-align: center; color: #777; margin-bottom: 2rem; font-size: 1.1rem; }
+        nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
+        nav a { text-decoration: none; color: var(--secondary-color); font-weight: bold; font-size: 1.1em; transition: color 0.2s; position: relative; padding-bottom: 5px; }
+        nav a:hover { color: #2980b9; }
+        nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #2980b9; transition: width 0.3s; }
+        nav a:hover::after { width: 100%; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 0.75rem; }
+        li a { text-decoration: none; color: var(--primary-color); font-size: 1.2em; font-weight: bold; transition: color 0.2s; }
+        li a:hover { color: #d35400; }
+        .details { background: var(--card-bg-color); padding: 2rem; border-radius: 12px; box-shadow: 0 5px 20px var(--shadow-color); border-top: 4px solid var(--primary-color); }
+        .details p { white-space: pre-wrap; line-height: 1.7; }
+        .details strong { color: var(--primary-color); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>All Recipes</h2>
+            <ul>
+                {% for recipe in recipes %}
+                <li><a href="/recipe/{{ recipe.id }}">{{ recipe.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1>Recipe Rover</h1>
+            <p class="app-description">Your friendly guide to making delicious meals with the ingredients you already have.</p>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/search">Search</a>
+                <a href="/add">Add Recipe</a>
+            </nav>
+
+            {% if recipe_details %}
+                <div class="details">
+                    <h2>{{ recipe_details.name }}</h2>
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        {% for ing in ingredients %}
+                        <li>{{ ing.quantity }} {{ ing.name }}</li>
+                        {% endfor %}
+                    </ul>
+                    <h3>Instructions:</h3>
+                    <p>{{ recipe_details.instructions }}</p>
+                    {% if recipe_details.youtube_link %}
+                    <p><strong>Video Tutorial:</strong> <a href="{{ recipe_details.youtube_link }}" target="_blank">Watch on YouTube</a></p>
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="details">
+                    <h2>Welcome to Recipe Rover!</h2>
+                    <p>Select a recipe from the list on the left to see its details, or use the navigation above to find a new recipe based on your ingredients!</p>
+                </div>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>
+
