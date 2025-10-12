@@ -89,6 +89,6 @@ Feel free to contribute improvements, bug fixes, or additional features to make 
 ---
 
 ## Video Demo
-![Demo video](Demo_video.mp4)
+https://github.com/user-attachments/assets/cb39f258-befc-407a-9b9e-2b7163832fdf
 
 
