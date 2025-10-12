@@ -1,0 +1,4 @@
+# No external dependencies required
+# This project uses only Python built-in libraries:
+# - re (regular expressions)
+# - getpass (secure password input)
