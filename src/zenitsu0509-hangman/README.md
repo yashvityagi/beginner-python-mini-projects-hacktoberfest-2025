@@ -1,6 +1,7 @@
 # Hangman (Beginner-Friendly)
 
-A simple command-line Hangman game written in Python. Guess the secret word one letter at a time before you run out of mistakes.
+Hangman is a classic word-guessing game implemented in Python.
+The player tries to guess the secret word one letter at a time. Each incorrect guess brings the player closer to losing. The goal is to guess the word before the hangman is fully drawn.
 
 ## Features
 
